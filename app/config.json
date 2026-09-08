@@ -1,1 +1,16 @@
-{"slug": "fhirtrail", "title": "FHIR Trail", "description": "Follow a record from resource to meaning.", "attribution": "FHIR resources served by FinchNode."}
+{
+  "slug": "fhirtrail",
+  "title": "FHIR Trail",
+  "description": "Follow a record from resource to meaning.",
+  "attribution": "FHIR resources served by FinchNode.",
+  "categories": [
+    "demographics",
+    "medications",
+    "conditions",
+    "labs",
+    "vitals",
+    "allergies",
+    "immunizations",
+    "encounters"
+  ]
+}
