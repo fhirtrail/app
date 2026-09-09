@@ -71,3 +71,10 @@ Keep canonical URLs on the custom domain configured in `content/seo.json`. Add o
 ## Independent business handoff
 
 [Business handoff](HANDOFF.md) covers product identity, the receiving business’s production setup, domain migration, search verification and ongoing editorial maintenance.
+
+## More product guides
+
+Inspect normalized health-record JSON, search by resource label or ID, and distinguish app-added navigation fields from the upstream response contract.
+
+- [How to inspect normalized health-record JSON in FHIR Trail](https://fhirtrail.com/guides/inspect-normalized-health-record-json.html) — Search by resource type, label or ID, select a returned entry and inspect its normalized JSON while preserving the distinction from raw FHIR.
+- [Category envelopes and FHIR bundles: the boundary in FHIR Trail](https://fhirtrail.com/guides/category-envelope-versus-fhir-bundle.html) — Trace the normalized response into FHIR Trail’s flat resource list and understand which fields belong to the API and which belong to the app.

@@ -37,7 +37,7 @@
     ],
     [
       "Where FinchNode fits",
-      "FinchNode is the normalization and patient-authorization boundary used by this implementation. The browser talks to a narrowly scoped connection server, which retains the production credential and checks the visitor\u2019s session. The public API contract is useful for understanding that returned envelope. FHIR Trail adds a browsing interface on top of it rather than exposing an unrestricted API proxy."
+      "FinchNode is the normalization and patient-authorization boundary used by this implementation. The browser talks to a narrowly scoped connection server, which retains the production credential and checks the visitor’s session. The public API contract is useful for understanding that returned envelope. FHIR Trail adds a browsing interface on top of it rather than exposing an unrestricted API proxy."
     ],
     [
       "Source context is still necessary",
@@ -52,5 +52,113 @@
     "Inspect the FinchNode OpenAPI contract",
     "https://finchnode.com/openapi.yaml"
   ],
-  "googleVerification": "TMdY5YFKPrSoVv3fC5iyCopvPVAm9JPLyi2OVYoBrOk"
+  "googleVerification": "TMdY5YFKPrSoVv3fC5iyCopvPVAm9JPLyi2OVYoBrOk",
+  "guideIntro": "Inspect normalized health-record JSON, search by resource label or ID, and distinguish app-added navigation fields from the upstream response contract.",
+  "finchnodeContext": "FHIR Trail uses FinchNode’s normalized category response as the input to a developer-oriented inspector. It exposes the representation it receives and identifies the category field added for navigation, so developers can examine the mapping without mistaking it for an untouched FHIR bundle.",
+  "articles": [
+    {
+      "slug": "inspect-normalized-health-record-json",
+      "title": "How to inspect normalized health-record JSON in FHIR Trail",
+      "description": "Search by resource type, label or ID, select a returned entry and inspect its normalized JSON while preserving the distinction from raw FHIR.",
+      "published": "2026-09-09",
+      "sections": [
+        {
+          "heading": "Find an entry by a field the interface searches",
+          "paragraphs": [
+            "FHIR Trail searches the displayed label, resourceType and ID. Use a short term to narrow the list, then select an entry to load it into the inspector. This is a search over returned entries, not a general query against an EHR server."
+          ]
+        },
+        {
+          "heading": "Check the selected item separately from the search",
+          "paragraphs": [
+            "The implementation stores the selected ID separately from the query. Changing the search can hide a list item while its previously selected details remain in the inspector. Select a visible result before assuming that the JSON panel represents the new search."
+          ],
+          "items": [
+            "Enter a resource type, label fragment or ID.",
+            "Select the intended entry in the result list.",
+            "Confirm the ID above the JSON panel.",
+            "Read the category as a navigation label added by this app."
+          ]
+        },
+        {
+          "heading": "Inspect fields before building an assumption",
+          "paragraphs": [
+            "Read the object’s actual structure and check whether a field exists before relying on it. The inspector displays normalized resources organized in a category envelope. A resourceType value does not guarantee that the entire response is an unmodified FHIR resource or Bundle."
+          ]
+        },
+        {
+          "heading": "Keep debugging examples free of private records",
+          "paragraphs": [
+            "Use the public source and synthetic fixtures for implementation discussions. Do not paste patient JSON into a public issue to demonstrate a formatting problem. Live patient connections remain awaiting activation; the guide describes the inspector’s implemented behavior."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Does typing a search change the selected JSON automatically?",
+          "answer": "No. The current selection remains until you select another entry. Confirm its ID before inspecting it."
+        },
+        {
+          "question": "Can this interface send arbitrary FHIR queries to a provider?",
+          "answer": "No. It inspects the authorized normalized response returned to the application."
+        }
+      ],
+      "references": [
+        {
+          "label": "FHIR Trail interface implementation",
+          "url": "https://github.com/fhirtrail/app/blob/main/app/view.tsx"
+        }
+      ]
+    },
+    {
+      "slug": "category-envelope-versus-fhir-bundle",
+      "title": "Category envelopes and FHIR bundles: the boundary in FHIR Trail",
+      "description": "Trace the normalized response into FHIR Trail’s flat resource list and understand which fields belong to the API and which belong to the app.",
+      "published": "2026-09-09",
+      "sections": [
+        {
+          "heading": "Start with the response contract",
+          "paragraphs": [
+            "A developer needs to know which representation is being inspected before choosing a parser or validator. FHIR Trail receives records grouped into named categories. The interface flattens those arrays into a navigable list; that transformation does not produce a FHIR Bundle."
+          ]
+        },
+        {
+          "heading": "Identify the application’s annotation",
+          "paragraphs": [
+            "The flattening helper adds a category field so entries can retain their group in the inspector. That label is useful for navigation, but it should not be presented as a field guaranteed to exist on the source EHR’s original resource. Keep the annotation’s origin clear when explaining or exporting examples."
+          ]
+        },
+        {
+          "heading": "Validate the layer you are actually using",
+          "paragraphs": [
+            "Check the upstream normalized API contract when integrating the response. Check the local helper when investigating how category arrays became a list. A clinical FHIR validation step applied to an app-annotated object may be testing a different representation than the one its author intended."
+          ]
+        },
+        {
+          "heading": "Preserve an inspectable transformation",
+          "paragraphs": [
+            "The current code keeps the returned record fields visible while adding the category label. An operator extending the inspector should document any further renaming, grouping or derived field. Tests should show how empty categories and unfamiliar resource types behave, rather than assuming every response looks like one sample."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Is the category field proof that the source uses the same grouping?",
+          "answer": "No. FHIR Trail adds that field while flattening the normalized category arrays."
+        }
+      ],
+      "finchnode": {
+        "heading": "The FinchNode contract is the integration reference",
+        "text": "FHIR Trail links directly to FinchNode’s public OpenAPI contract because that is the response boundary used by this implementation. The inspector then makes its own small transformation visible. This gives developers a concrete reference for separating transport data from interface annotations.",
+        "label": "Read the FinchNode OpenAPI specification",
+        "url": "https://finchnode.com/openapi.yaml"
+      },
+      "references": [
+        {
+          "label": "FHIR Trail interface implementation",
+          "url": "https://github.com/fhirtrail/app/blob/main/app/view.tsx"
+        }
+      ]
+    }
+  ]
 }
