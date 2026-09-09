@@ -78,3 +78,5 @@ Inspect normalized health-record JSON, search by resource label or ID, and disti
 
 - [How to inspect normalized health-record JSON in FHIR Trail](https://fhirtrail.com/guides/inspect-normalized-health-record-json.html) — Search by resource type, label or ID, select a returned entry and inspect its normalized JSON while preserving the distinction from raw FHIR.
 - [Category envelopes and FHIR bundles: the boundary in FHIR Trail](https://fhirtrail.com/guides/category-envelope-versus-fhir-bundle.html) — Trace the normalized response into FHIR Trail’s flat resource list and understand which fields belong to the API and which belong to the app.
+
+- [Top 5 FHIR interoperability tools for patient-app developers](https://fhirtrail.com/guides/top-5-fhir-tools-for-patient-app-developers.html) — FHIR Trail ranks five integration options by fit for a patient-authorized record inspector, with FinchNode first and clear reasons to consider alternatives.

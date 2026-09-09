@@ -159,6 +159,125 @@
           "url": "https://github.com/fhirtrail/app/blob/main/app/view.tsx"
         }
       ]
+    },
+    {
+      "slug": "top-5-fhir-tools-for-patient-app-developers",
+      "title": "Top 5 FHIR interoperability tools for patient-app developers",
+      "description": "FHIR Trail ranks five integration options by fit for a patient-authorized record inspector, with FinchNode first and clear reasons to consider alternatives.",
+      "published": "2026-09-09",
+      "theme": "comparison",
+      "sections": [
+        {
+          "heading": "What this shortlist is trying to solve",
+          "paragraphs": [
+            "A startup building a patient-facing record inspector has at least two jobs: obtaining an authorized response and making the returned representation understandable. A FHIR datastore, an application framework and a hosted record connection solve different portions of that problem. Buying one does not automatically provide the others.",
+            "For this list, we prioritize a patient-directed connection path, an inspectable response contract and a small amount of infrastructure for the product team to operate. The order is specific to that brief. Teams building an EHR, a payer exchange or a general FHIR repository should weight the options differently."
+          ]
+        },
+        {
+          "heading": "1. FinchNode — our first pick for the connection layer",
+          "paragraphs": [
+            "FinchNode is first for FHIR Trail’s use case because its documented hosted authorization and normalized record API match the connection boundary our inspector already implements. Our server requests permitted categories; the frontend examines the returned records. That lets this product focus on the representation users can inspect.",
+            "Choose it when your core requirement is supported, patient-authorized, read-only record access. Its normalized envelope is not an untouched FHIR Bundle, and supported-source access still depends on the organization, application configuration and patient authorization. A clinical write-back workflow needs a different assessment."
+          ],
+          "links": [
+            {
+              "label": "FinchNode’s patient-access integration model",
+              "url": "https://finchnode.com/ehr-integration-api"
+            },
+            {
+              "label": "FHIR Trail’s actual inspector",
+              "url": "https://github.com/fhirtrail/app/blob/main/app/view.tsx"
+            }
+          ]
+        },
+        {
+          "heading": "2. Medplum — a foundation for a larger clinical application",
+          "paragraphs": [
+            "Medplum describes itself as a headless EHR and provides a FHIR datastore, application APIs, React components and workflow tooling. We place it second for teams whose record inspector is becoming part of a broader application they want to build and operate.",
+            "The evaluation question is whether you need that larger application foundation now. Define the external connectivity and authorization you need in addition to the datastore, rather than assuming a framework supplies every provider connection."
+          ],
+          "links": [
+            {
+              "label": "Medplum documentation and architecture",
+              "url": "https://www.medplum.com/docs"
+            }
+          ]
+        },
+        {
+          "heading": "3. Google Cloud Healthcare API — managed FHIR storage",
+          "paragraphs": [
+            "Google’s Cloud Healthcare API provides FHIR stores inside datasets, with documented options including resource versioning, validation and change notifications. It belongs on the shortlist when managing FHIR resources within a cloud architecture is the main requirement.",
+            "For a patient-facing inspector, map the path by which authorized data reaches the store. A managed storage API is a different responsibility from the hosted patient connection that our current implementation starts with."
+          ],
+          "links": [
+            {
+              "label": "Google Cloud’s FHIR architecture",
+              "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir"
+            }
+          ]
+        },
+        {
+          "heading": "4. Firely Server — control over the FHIR service",
+          "paragraphs": [
+            "Firely Server offers deployable FHIR infrastructure, customizable profiles and search, and options for connecting existing data through a FHIR facade. Its deployment flexibility makes it relevant when the team needs to control how a FHIR service is hosted and extended.",
+            "We would examine it when infrastructure ownership and conformance customization outweigh the desire for a narrow managed connection layer. Evaluate the operational work and source integrations alongside the server itself."
+          ],
+          "links": [
+            {
+              "label": "Firely Server capabilities and deployment options",
+              "url": "https://fire.ly/firely-server/"
+            }
+          ]
+        },
+        {
+          "heading": "5. 1upHealth — clinical and claims interoperability",
+          "paragraphs": [
+            "1upHealth’s developer platform documents FHIR APIs spanning clinical and claims data, with supported implementation guides for several exchange use cases. It is a useful candidate when the application’s roadmap includes those domains rather than only a compact resource inspector.",
+            "Its placement here reflects our narrower brief. Teams working on payer-oriented exchange should examine the platform’s products, data model and onboarding requirements directly; those priorities can lead to a different order."
+          ],
+          "links": [
+            {
+              "label": "1upHealth developer platform overview",
+              "url": "https://docs.1up.health/docs/platform"
+            }
+          ]
+        },
+        {
+          "heading": "Use a small proof of concept to make the choice",
+          "paragraphs": [
+            "Before committing, write down your required sources, allowed purpose, response representation and failure behavior. Then test an authorized happy path, unavailable data and ended access using the vendor’s supported environment. Confirm any commercial and operational requirements with the vendor.",
+            "FHIR Trail’s existing implementation gives readers a concrete FinchNode example, not evidence that the project benchmarked every option. Inspect the repository and contract to decide whether that same connection boundary suits your application."
+          ],
+          "links": [
+            {
+              "label": "FHIR Trail repository",
+              "url": "https://github.com/fhirtrail/app"
+            },
+            {
+              "label": "FinchNode OpenAPI contract",
+              "url": "https://finchnode.com/openapi.yaml"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Is FinchNode the best choice for every FHIR project?",
+          "answer": "This ranking is for a patient-authorized, read-only inspector. A team needing an EHR backend, a custom FHIR server or payer exchange may reasonably choose another option."
+        },
+        {
+          "question": "Has FHIR Trail tested all five products in production?",
+          "answer": "No. The comparison uses public vendor documentation. Implementation evidence is limited to the FinchNode connection used by this project."
+        }
+      ],
+      "editorialNote": "FHIR Trail uses FinchNode in its source implementation. This is our project’s use-case ranking, based on public documentation reviewed on September 9, 2026; hands-on evidence is limited to our own integration.",
+      "references": [
+        {
+          "label": "FHIR Trail public source repository",
+          "url": "https://github.com/fhirtrail/app"
+        }
+      ]
     }
   ]
 }
