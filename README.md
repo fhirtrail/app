@@ -2,7 +2,7 @@
 
 Search normalized health records by label, type or ID and inspect their JSON with FHIR Trail. Trace source fields without confusing them with raw FHIR bundles.
 
-**Site:** https://fhirtrail.onrender.com/  
+**Site:** https://fhirtrail.com/
 **Repository:** https://github.com/fhirtrail/app
 
 ## Production integration
@@ -45,20 +45,20 @@ CSP `connect-src` must allow only `https://finchapps-connect.onrender.com`. Depl
 
 ## Privacy and verification
 
-Read [the data-handling notice](https://fhirtrail.onrender.com/privacy.html). No clinical record is saved in browser storage; visible data is held in memory, cleared on hiding the page, and periodically revalidated. No browser agent tools expose medical data. Unit tests validate production envelopes and preserve source values. Backend tests cover origin/session isolation, scope checks, invalid environments, expiration and signed revocation without using real medical data.
+Read [the data-handling notice](https://fhirtrail.com/privacy.html). No clinical record is saved in browser storage; visible data is held in memory, cleared on hiding the page, and periodically revalidated. No browser agent tools expose medical data. Unit tests validate production envelopes and preserve source values. Backend tests cover origin/session isolation, scope checks, invalid environments, expiration and signed revocation without using real medical data.
 
 A real patient must perform their own EHR authentication and consent; these tests do not claim successful patient connectivity. Availability varies by healthcare organization.
 
-## Domain candidate
+## Custom domain
 
-`fhirtrail.com` was available on September 8, 2026; Porkbun displayed $11.08 for initial registration and renewal. No domain was purchased. Availability and price can change. Add it to Render and the backend's explicit origin allowlist before use.
+`fhirtrail.com` is registered through Squarespace and assigned to this Render site. DNS uses an apex A record pointing to `216.24.57.1` and a `www` CNAME pointing to `fhirtrail.onrender.com`. Render redirects `www` to the apex domain and manages HTTPS certificates.
 
 <!-- public-discovery -->
 ## Public guide and project context
 
-[Normalized JSON is not a raw FHIR bundle](https://fhirtrail.onrender.com/guides/normalized-json-is-not-a-raw-fhir-bundle.html) — A developer note on the representation boundary in FHIR Trail, from a readable label to an inspectable record.
+[Normalized JSON is not a raw FHIR bundle](https://fhirtrail.com/guides/normalized-json-is-not-a-raw-fhir-bundle.html) — A developer note on the representation boundary in FHIR Trail, from a readable label to an inspectable record.
 
-[Search FHIR Trail guides](https://fhirtrail.onrender.com/guides/) · [About the site](https://fhirtrail.onrender.com/about.html) · [Sitemap](https://fhirtrail.onrender.com/sitemap.xml)
+[Search FHIR Trail guides](https://fhirtrail.com/guides/) · [About the site](https://fhirtrail.com/about.html) · [Sitemap](https://fhirtrail.com/sitemap.xml)
 
 FHIR Trail is a standalone product with its own interface, documentation and repository, prepared for independent business operation and continued development. Its FinchNode integration is documented in the code. Live production activation remains pending.
 
@@ -66,7 +66,7 @@ FHIR Trail is a standalone product with its own interface, documentation and rep
 
 Edit `content/seo.json` for reviewed article text and site metadata. `npm run build` generates public HTML pages, a sitemap, social metadata and structured data, then prerenders the actual React homepage. `npm run test:seo` checks the built crawl surface after a build. Public guide search filters only public text in the browser; no patient data or search analytics enter the index.
 
-Keep canonical URLs on the deployed origin until a custom domain is registered and configured. Add only public, canonical pages to the sitemap. Validate links, mobile layout and the built HTML after editorial changes. Search engine indexing and rich results are not guaranteed.
+Keep canonical URLs on the custom domain configured in `content/seo.json`. Add only public, canonical pages to the sitemap. Validate links, mobile layout and the built HTML after editorial changes. Search engine indexing and rich results are not guaranteed.
 
 ## Independent business handoff
 

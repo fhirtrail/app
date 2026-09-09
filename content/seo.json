@@ -10,7 +10,7 @@
   "repositoryStatus": "public",
   "renderStatus": "live",
   "repository": "https://github.com/fhirtrail/app",
-  "liveUrl": "https://fhirtrail.onrender.com/",
+  "liveUrl": "https://fhirtrail.com/",
   "homepage": "individually designed full website",
   "importRoute": "/#/import",
   "subject": "FHIR-derived JSON & normalized resource explorer",
@@ -37,7 +37,7 @@
     ],
     [
       "Where FinchNode fits",
-      "FinchNode is the normalization and patient-authorization boundary used by this implementation. The browser talks to a narrowly scoped connection server, which retains the production credential and checks the visitor’s session. The public API contract is useful for understanding that returned envelope. FHIR Trail adds a browsing interface on top of it rather than exposing an unrestricted API proxy."
+      "FinchNode is the normalization and patient-authorization boundary used by this implementation. The browser talks to a narrowly scoped connection server, which retains the production credential and checks the visitor\u2019s session. The public API contract is useful for understanding that returned envelope. FHIR Trail adds a browsing interface on top of it rather than exposing an unrestricted API proxy."
     ],
     [
       "Source context is still necessary",
