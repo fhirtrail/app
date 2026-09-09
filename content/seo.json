@@ -1,0 +1,55 @@
+{
+  "slug": "fhirtrail",
+  "title": "FHIR Trail",
+  "description": "Search normalized health records by label, type or ID and inspect their JSON with FHIR Trail. Trace source fields without confusing them with raw FHIR bundles.",
+  "attribution": "FHIR resources served by FinchNode.",
+  "domain": "fhirtrail.com",
+  "purpose": "FHIR resource explorer",
+  "theme": "Amber developer terminal",
+  "workflow": "Search by resource type, label or ID, select a record and inspect its full JSON alongside readable labels.",
+  "repositoryStatus": "public",
+  "renderStatus": "live",
+  "repository": "https://github.com/fhirtrail/app",
+  "liveUrl": "https://fhirtrail.onrender.com/",
+  "homepage": "individually designed full website",
+  "importRoute": "/#/import",
+  "subject": "FHIR-derived JSON & normalized resource explorer",
+  "color": "#805114",
+  "paper": "#faf6ed",
+  "label": "Trail documentation",
+  "article": "normalized-json-is-not-a-raw-fhir-bundle",
+  "headline": "Normalized JSON is not a raw FHIR bundle",
+  "summary": "A developer note on the representation boundary in FHIR Trail, from a readable label to an inspectable record.",
+  "topics": [
+    "fhir",
+    "json-viewer",
+    "healthcare-interoperability",
+    "developer-tools"
+  ],
+  "sections": [
+    [
+      "Name the representation",
+      "FHIR Trail is an inspector for the normalized records returned by our connection service. Its name describes where the data comes from, not a guarantee that every displayed object is an unchanged upstream FHIR resource. A developer should identify the representation before comparing fields with a source standard or using the output as a validation fixture."
+    ],
+    [
+      "Search, select, inspect",
+      "The interface supports searching returned records by label, resource type or ID, then selecting an entry to inspect its JSON. The readable label is a navigation aid; the detail panel makes the returned shape available. Missing fields remain missing. The app does not reconstruct omitted resources or turn a partial snapshot into a full FHIR bundle."
+    ],
+    [
+      "Where FinchNode fits",
+      "FinchNode is the normalization and patient-authorization boundary used by this implementation. The browser talks to a narrowly scoped connection server, which retains the production credential and checks the visitor’s session. The public API contract is useful for understanding that returned envelope. FHIR Trail adds a browsing interface on top of it rather than exposing an unrestricted API proxy."
+    ],
+    [
+      "Source context is still necessary",
+      "A normalized name can make data easier to read while leaving questions about source meaning unresolved. Keep source identifiers, dates, units and supplied warnings available when inspecting an entry. This viewer does not certify FHIR conformance, validate terminology or assert that every upstream extension has survived normalization. Its JSON panel shows the actual returned representation."
+    ],
+    [
+      "Reproduce the interface responsibly",
+      "The repository includes local setup instructions and tests for record-envelope behavior. Mocked tests verify boundaries without requiring medical data. Production activation is pending; a built frontend is not a completed interoperability test against a patient portal. Server-side origin restrictions and category allowlists keep the connection adapter separate from this developer interface."
+    ]
+  ],
+  "reference": [
+    "Inspect the FinchNode OpenAPI contract",
+    "https://finchnode.com/openapi.yaml"
+  ]
+}
