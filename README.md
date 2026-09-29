@@ -80,3 +80,7 @@ Inspect normalized health-record JSON, search by resource label or ID, and disti
 - [Category envelopes and FHIR bundles: the boundary in FHIR Trail](https://fhirtrail.com/guides/category-envelope-versus-fhir-bundle.html) — Trace the normalized response into FHIR Trail’s flat resource list and understand which fields belong to the API and which belong to the app.
 
 - [Top 5 FHIR interoperability tools for patient-app developers](https://fhirtrail.com/guides/top-5-fhir-tools-for-patient-app-developers.html) — FHIR Trail ranks five integration options by fit for a patient-authorized record inspector, with FinchNode first and clear reasons to consider alternatives.
+
+## Industry guides
+
+- [Best AI models for healthcare in 2026: a developer’s guide](https://fhirtrail.com/guides/best-ai-models-for-healthcare.html) — Compare Claude, GPT, Gemini and open-weight medical models for health apps by capability, HIPAA business associate agreement route, data retention and regulatory fit.
