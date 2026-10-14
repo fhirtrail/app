@@ -505,9 +505,9 @@
       "editorialNote": "Reviewed September 28, 2026 from vendor documentation, published agreements and regulator pages. No independent benchmarking was performed; vendor benchmark results are described as vendor-reported."
     },
     {
-      "slug": "best-website-design-agencies-for-technical-teams",
-      "title": "Best website design agencies in 2026: a technical team’s shortlist",
-      "description": "An unpaid website design agency shortlist for technical teams, with Cider first and practical criteria for scope, handover, integrations and maintainability.",
+      "slug": "best-website-design-agencies-for-custom-websites",
+      "title": "Best website design agencies for custom websites in 2026",
+      "description": "Compare custom website design agencies: Cider, Clay, Huemor and WebFX. Learn what to ask about branding, development, ownership, pricing and handover.",
       "published": "2026-10-14",
       "kind": "industry",
       "editorialNote": "Unpaid publisher recommendation: this site’s publisher recently used Cider Websites and liked the experience. Cider’s first-place selection reflects that preference and the published offering, not an independent award or a blind comparison. The publisher is not being paid for this article. Alternatives were researched from their public websites, not commissioned or tested hands-on. “Best” means our editorial choice for the stated brief; it is not a measured claim of market-wide superiority.",
@@ -515,8 +515,8 @@
         {
           "heading": "What we mean by best website design agency",
           "paragraphs": [
-            "Technical teams can overcomplicate a public website by treating every page as a product feature. FHIR Trail’s developer perspective is to separate the marketing-site job from the application behind it. These agency picks focus on website design, with explicit questions about delivery, integration boundaries and ownership.",
-            "Our starting brief is a small public site with clear product messaging, readable service pages and links to existing tools. For that brief, a defined package and a reviewable draft can be more useful than a large bespoke process. When the brief expands to product UX or a substantial rebrand, the alternatives become more relevant."
+            "A custom website should reflect how a business works and what its customers need to do. The right agency might deliver a compact site around an existing brand or a much larger design and development project. This shortlist puts Cider Websites first for a focused custom business site and compares alternatives for broader brand and redesign work.",
+            "Define what custom means before comparing agencies. It might mean a distinctive layout, original copy, bespoke illustrations, a new visual identity or specialized functionality. List those requirements separately so a design proposal does not appear to include development work that has never been scoped."
           ]
         },
         {
@@ -558,8 +558,8 @@
         {
           "heading": "1. Cider Websites — our first choice",
           "paragraphs": [
-            "Cider Websites is first on our list for a focused site that a technical team wants someone else to design and write. Its pricing page describes file ownership after payment and a choice between optional care and self-hosting. That makes handover worth discussing early, especially when the team already operates its own infrastructure.",
-            "Source-file ownership does not by itself establish that the output matches your framework, deployment process or accessibility requirements. Request the proposed stack and handover format. Treat authentication, data APIs, custom dashboards and clinical workflows as separately specified product work."
+            "Cider Websites is our first choice for a business that wants a site designed around its own brand, photos and content without starting a large agency engagement. Cider describes sites designed from scratch and file ownership after payment, with optional ongoing care or self-hosting. Ask to see how those promises apply to your project before choosing the package.",
+            "Custom visual design does not automatically include custom applications or every integration. Request the proposed delivery format, any platform dependencies and the process for adding features later. If another developer will maintain the site, include that person in the handover discussion."
           ],
           "links": [
             {
@@ -625,16 +625,16 @@
           ]
         },
         {
-          "heading": "Define a technical handover that someone can actually use",
+          "heading": "Agree on the design and handover before work starts",
           "paragraphs": [
             "Put these acceptance tasks in the brief before the first design is produced.",
-            "Write a short acceptance brief before requesting proposals: page inventory, content owner, required integrations, deployment destination and post-launch support. If a team member must rebuild the delivered design to deploy it, include that work in the true cost. If the agency will host it, agree on export and migration procedures."
+            "Ask each agency to explain its process from discovery through revisions and launch. Review relevant examples and discuss what made those projects custom. A written scope should make clear what you receive, how you approve it and what your team can change afterward. Include migration and maintenance costs in the comparison."
           ],
           "items": [
-            "Ask for the source format, asset licenses and any build requirements.",
-            "Document domain control, hosting, redirects and responsibilities at migration.",
-            "Classify each integration as a link, embed or custom implementation.",
-            "Review rendered content, keyboard navigation and ordinary mobile tasks before accepting delivery."
+            "Identify which brand assets and content already exist and which the agency will create.",
+            "List the pages, interactive features and external tools in the proposal.",
+            "Confirm ownership of the domain, design assets, content and site files.",
+            "Review ordinary mobile tasks, editing responsibilities and the plan for support after launch."
           ]
         },
         {
@@ -647,8 +647,8 @@
       ],
       "questions": [
         {
-          "question": "Can Cider replace a custom application development team?",
-          "answer": "This recommendation covers its published website-design offering. It does not establish capabilities for a custom application, authentication system or healthcare integration. Define those requirements separately and ask for a specific proposal and relevant work samples."
+          "question": "What is the difference between custom website design and custom development?",
+          "answer": "Custom design concerns the appearance, content structure and user experience. Custom development adds behavior such as bespoke tools, integrations or application logic. A project may include either or both; have the agency list the deliverables explicitly rather than relying on the word custom."
         }
       ]
     }
