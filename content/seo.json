@@ -651,6 +651,86 @@
           "answer": "Custom design concerns the appearance, content structure and user experience. Custom development adds behavior such as bespoke tools, integrations or application logic. A project may include either or both; have the agency list the deliverables explicitly rather than relying on the word custom."
         }
       ]
+    },
+    {
+      "slug": "write-frameotter-prompts-for-technical-tutorials",
+      "title": "How we write FrameOtter prompts for technical tutorials",
+      "description": "Our editing-brief template for technical videos: define the viewer’s task, protect exact terminology and review the FrameOtter draft against the source guide.",
+      "published": "2026-11-02",
+      "kind": "content",
+      "editorialNote": "Finchapps uses FrameOtter for its video content. Finchapps is not partnered or affiliated with FrameOtter. This is our publisher’s perspective on content production; links go directly to the named services.",
+      "sections": [
+        {
+          "heading": "Give the assistant a task it can be judged against",
+          "paragraphs": [
+            "We use FrameOtter for Finchapps content videos, including explanations for technical readers. A useful editing prompt describes what the audience should understand after watching. “Make this engaging” gives little basis for review; “show where the category label is added and retain the explanation of the returned envelope” gives the edit a concrete purpose.",
+            "FHIR Trail’s guides distinguish normalized category responses from untouched FHIR bundles. A technical video should preserve that boundary. Start by identifying the terms, fields and sequence whose meaning must survive the cut, then decide which repeated takes or pauses can be removed."
+          ]
+        },
+        {
+          "heading": "Use a brief with five concrete parts",
+          "paragraphs": [
+            "Our template covers the audience, source, outcome, required context and ending. Keep it short enough to read beside the draft. It should explain the purpose of the footage rather than dictate every frame before the editor has assembled a sequence."
+          ],
+          "items": [
+            "Audience: a developer inspecting the representation returned to the app.",
+            "Source: approved public documentation and a clearly illustrative screen recording.",
+            "Outcome: show how the inspector exposes the category and payload.",
+            "Required context: retain the distinction between normalized JSON and a raw FHIR bundle.",
+            "Ending: direct the viewer to the full guide and source repository."
+          ]
+        },
+        {
+          "heading": "Name what must remain exact",
+          "paragraphs": [
+            "Mark field names, interface labels and quoted code as exact text in the production notes. Do not ask for invented payloads to fill a visual gap. A safer demonstration uses a minimal illustrative example whose purpose is clear and whose values do not resemble a real person’s records.",
+            "When a term sounds similar to another, check the caption as well as the voice track. A video that shows the correct code while naming a different object in narration can confuse the viewer. Fix the underlying explanation before adding visual polish."
+          ]
+        },
+        {
+          "heading": "Ask for structure, then inspect the proposed cut",
+          "paragraphs": [
+            "FrameOtter describes an assistant that makes an editable video and explains its choices. That supports a two-stage approach: request a coherent draft, then compare the result with the brief. We do not assume the assistant understands the application’s data contract simply because it can edit the recording.",
+            "A good revision request points to the problem and the intended result. For example: restore the sentence explaining the category field before the inspector view, and hold on the example while it is described. That is more actionable than asking the whole video to feel more technical."
+          ],
+          "links": [
+            {
+              "label": "FrameOtter’s editable AI workflow",
+              "url": "https://frameotter.com/ai-video-editors-for-streamers"
+            }
+          ]
+        },
+        {
+          "heading": "Protect causality in the demonstration",
+          "paragraphs": [
+            "Code demonstrations are particularly vulnerable to misleading cuts. A shortened sequence can imply that one command produced output that actually came from another step. Watch the recording against the written workflow and restore any prerequisite the viewer needs to reproduce the example.",
+            "Do not hide a failed command merely to imply a successful integration. A public tutorial should state its assumptions and describe only the behavior it demonstrates. If the connection is not active, use an explicitly illustrative explanation instead of manufacturing evidence of a live result."
+          ]
+        },
+        {
+          "heading": "Close with a useful path to the details",
+          "paragraphs": [
+            "A technical short can introduce a concept, but the full article and repository provide the material a developer needs to inspect it. Use the actual topic in the title and link to the matching guide. Keep version or review information in production notes so future interface changes can be assessed.",
+            "Our goal is a video that makes the written explanation easier to approach. FrameOtter helps us work from footage to an editable draft; source review and technical accuracy remain our responsibility. A shorter draft earns publication only when it still teaches the right thing."
+          ],
+          "items": [
+            "Compare the draft with the five-part brief.",
+            "Verify exact labels in captions and on screen.",
+            "Check that cuts preserve prerequisites and results.",
+            "Watch the export and link the current source guide."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "What makes an effective AI video-editing prompt?",
+          "answer": "Specify the viewer, the task, the source, the context that must remain and the ending. Then review the draft against those requirements."
+        },
+        {
+          "question": "Can the editing assistant verify our API behavior?",
+          "answer": "This workflow does not use a video editor as a technical verifier. Check claims against the implementation and documentation, and review the final explanation yourself."
+        }
+      ]
     }
   ]
 }

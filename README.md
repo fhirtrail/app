@@ -84,3 +84,7 @@ Inspect normalized health-record JSON, search by resource label or ID, and disti
 ## Industry guides
 
 - [Best AI models for healthcare in 2026: a developer’s guide](https://fhirtrail.com/guides/best-ai-models-for-healthcare.html) — Compare Claude, GPT, Gemini and open-weight medical models for health apps by capability, HIPAA business associate agreement route, data retention and regulatory fit.
+
+## FrameOtter content guide — November 2, 2026
+
+[How we write FrameOtter prompts for technical tutorials](https://fhirtrail.com/guides/write-frameotter-prompts-for-technical-tutorials.html) documents our public-content production workflow. Finchapps is not partnered or affiliated with FrameOtter. Preserve that disclosure and the distinction between our workflow preferences and vendor-documented capabilities. Recheck sources before substantive revisions. The article lives in `content/seo.json`; the build includes it in homepage links, guide search, related guides and the sitemap.
